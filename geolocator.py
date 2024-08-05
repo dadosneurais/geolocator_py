@@ -8,8 +8,7 @@ def get_location(ip):
     data = requests.get(url).json()
     return data['loc']  # latitude e longitude
 
-location = get_location(public_ip())
-google_maps_url = f'https://www.google.com/maps?q={location}'
+google_maps_url = f'https://www.google.com/maps?q={get_location(public_ip())}'
 
 print(f'Meu IP público é: {public_ip()}')
 print(f'URL do Google Maps: {google_maps_url}')
