@@ -5,8 +5,7 @@ def public_ip():
 
 def get_location(ip):
     url = f'http://ipinfo.io/{ip}/json'
-    response = requests.get(url)
-    data = response.json()
+    data = requests.get(url).json()
     return data['loc']  # latitude e longitude
 
 location = get_location(public_ip())
